@@ -270,7 +270,7 @@ print("=" * 60)
 # Analyze which coffee to stock more
 top_coffees = coffee_counts.head(5)
 
-print("\n📊 RECOMMENDATION: Stock more of these coffees (by popularity):")
+print("\n RECOMMENDATION: Stock more of these coffees (by popularity):")
 print("-" * 50)
 
 for i, (coffee, count) in enumerate(top_coffees.items(), 1):
@@ -280,20 +280,20 @@ for i, (coffee, count) in enumerate(top_coffees.items(), 1):
 
 # Calculate recommended stock ratio
 total_orders = len(df)
-print(f"\n📈 Recommended Stock Ratio for Next Day:")
+print(f"\n Recommended Stock Ratio for Next Day:")
 print("-" * 50)
 for coffee, count in coffee_counts.items():
     ratio = (count / total_orders) * 100
     print(f"  {coffee:20s}: {ratio:5.1f}%")
 
 # Best time recommendations
-print(f"\n⏰ Peak Hours (stock up during these times):")
+print(f"\n Peak Hours (stock up during these times):")
 print("-" * 50)
 for hour in peak_hours.index:
     print(f"  - {hour}:00 ({peak_hours[hour]} orders)")
 
 # Day recommendations
-print(f"\n📅 Best Days (highest sales):")
+print(f"\n Best Days (highest sales):")
 print("-" * 50)
 best_days = dow_sales.nlargest(3)
 for day in best_days.index:
@@ -312,7 +312,7 @@ most_popular = coffee_counts.idxmax()
 most_popular_count = coffee_counts.max()
 
 print(f"""
-📌 KEY FINDINGS:
+ KEY FINDINGS:
 
 1. Total Orders Analyzed: {len(df):,}
 2. Date Range: {df['date'].min().strftime('%Y-%m-%d')} to {df['date'].max().strftime('%Y-%m-%d')}
@@ -320,13 +320,13 @@ print(f"""
 4. Average Daily Orders: {avg_daily:.1f}
 5. Model Prediction Accuracy: {accuracy*100:.1f}%
 
-🎯 RECOMMENDATION FOR NEXT 10 ORDERS:
+ RECOMMENDATION FOR NEXT 10 ORDERS:
    You should prepare MORE of these coffees:
    1. {coffee_counts.index[0]} (Highest demand)
    2. {coffee_counts.index[1]}
    3. {coffee_counts.index[2]}
 
-💡 STOCKING STRATEGY:
+ STOCKING STRATEGY:
    - Focus on {most_popular} as it represents {((most_popular_count/len(df))*100):.1f}% of orders
    - Ensure sufficient stock during peak hours ({peak_hours.index[0]}:00-{peak_hours.index[0]+2}:00)
    - Weekend days ({dow_names[5]}, {dow_names[6]}) may need extra preparation
@@ -335,6 +335,7 @@ print(f"""
 # Save predictions to CSV
 predictions_df = pd.DataFrame(predictions)
 predictions_df.to_csv('next_10_predictions.csv', index=False)
-print("\n✅ Predictions saved to: next_10_predictions.csv")
-print("✅ Analysis complete!")
+print("\n Predictions saved to: next_10_predictions.csv")
+print(" Analysis complete!")
+
 
