@@ -1,0 +1,11 @@
+order_num,day_of_week,hour,predicted_coffee,confidence
+1,Monday,10,Latte,38.69079911162812
+2,Monday,11,Cappuccino,27.890031831951294
+3,Monday,16,Americano,29.351972994368076
+4,Tuesday,12,Americano,40.47295462484196
+5,Tuesday,9,Americano,45.796042456747074
+6,Tuesday,10,Americano,39.7903176145946
+7,Wednesday,11,Americano,41.90557849457644
+8,Wednesday,16,Latte,28.949251048185197
+9,Wednesday,12,Americano,45.22731534735695
+10,Thursday,9,Americano with Milk,26.260778310426254
